@@ -71,7 +71,7 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.humansecurity:sdk:4.1.6'
+    implementation 'com.humansecurity:sdk:4.1.7'
 
 //    implementation files('libs/HUMAN-release.aar')
 //    implementation 'androidx.core:core-ktx:1.15.0' // any version (select 1.10.1 if your app targets API 33)
