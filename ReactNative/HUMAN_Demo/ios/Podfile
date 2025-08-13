@@ -5,7 +5,7 @@ platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'HUMAN_Demo' do
-  pod 'HUMAN', '4.1.1'
+  pod 'HUMAN', '4.1.2'
   
   config = use_native_modules!
 
