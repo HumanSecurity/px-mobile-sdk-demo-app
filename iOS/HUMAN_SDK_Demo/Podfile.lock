@@ -1,10 +1,10 @@
 PODS:
   - Alamofire (5.9.1)
-  - HUMAN (4.1.1)
+  - HUMAN (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.9.1)
-  - HUMAN (= 4.1.1)
+  - HUMAN (= 4.2.0)
 
 SPEC REPOS:
   trunk:
@@ -13,8 +13,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  HUMAN: 37d2ca8b36fdce3d23fc6edeba2f1dcf66c93a68
+  HUMAN: 7b432d6980d0e5097eb44f0d65202e31fe43c2a6
 
-PODFILE CHECKSUM: ed1b66f59d84ab0ab513eb2c44acefd49d9151cf
+PODFILE CHECKSUM: 9ae0883cba05b878de7a525ee4d718aff2e85d30
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
