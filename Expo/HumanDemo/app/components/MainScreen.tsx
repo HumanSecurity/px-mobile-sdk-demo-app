@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Button, StyleSheet, Text, ScrollView } from "react-native";
 import { HumanSecurity, HS_EVENTS } from "@humansecurity/expo-mobile-sdk";
-import { ApiManager } from "@/app/utils/ApiManager";
+import { ApiManager }  from "@/src/utils/ApiManager";
 // Uncomment the next line if you plan to use the WebView in hybrid mode:
 //  import { WebView } from "react-native-webview";
 

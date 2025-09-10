@@ -10,25 +10,29 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@humansecurity/expo-mobile-sdk": "^1.0.4",
+    "@humansecurity/expo-mobile-sdk": "^1.0.5",
+    "@react-navigation/native": "^7.1.17",
+    "@react-navigation/native-stack": "^7.3.26",
     "axios": "^1.7.9",
-    "expo": "~52.0.27",
-    "expo-constants": "~17.0.4",
-    "expo-font": "~13.0.3",
-    "expo-router": "~4.0.17",
-    "expo-splash-screen": "^0.29.21",
-    "expo-status-bar": "~2.0.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.76.6",
-    "react-native-safe-area-context": "4.12.0",
-    "react-native-web": "~0.19.13",
-    "react-native-webview": "^13.12.5"
+    "expo": "~53.0.22",
+    "expo-constants": "~17.1.7",
+    "expo-font": "~13.3.2",
+    "expo-linking": "~7.1.7",
+    "expo-router": "~5.1.5",
+    "expo-splash-screen": "~0.30.10",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "0.79.6",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "^4.16.0",
+    "react-native-web": "^0.20.0",
+    "react-native-webview": "13.13.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
-    "@types/react": "~18.3.12",
-    "typescript": "^5.3.3"
+    "@types/react": "~19.0.10",
+    "typescript": "~5.8.3"
   },
   "private": true
 }

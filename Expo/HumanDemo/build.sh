@@ -7,7 +7,7 @@ echo "Starting build process..."
 echo "Cleaning example project..."
 rm -rf node_modules package-lock.json
 rm -rf ios/Podfile.lock ios/Pods
-npm install
+npm install --loglevel=error
 
 # Run Expo prebuild
 echo "Running Expo prebuild..."
