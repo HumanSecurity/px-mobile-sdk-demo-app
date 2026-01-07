@@ -72,3 +72,19 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Ruby / CocoaPods
+#
+# Ignore local gems installed via 'bundle config set path vendor/bundle'
+/ios/vendor/bundle/
+/vendor/bundle/
+
+# Ignore the actual Pods source code to keep the repo small
+# They can be re-installed using 'bundle exec pod install'
+**/Pods/
+
+# DO NOT ignore these (ensure they are NOT in your gitignore):
+# !Gemfile
+# !Gemfile.lock
+# !Podfile
+# !Podfile.lock

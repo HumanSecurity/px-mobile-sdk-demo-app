@@ -44,4 +44,16 @@ Ionic/MyApp/dist/
 visionOS/HumanDemo/HumanDemo.xcodeproj/xcuserdata
 visionOS/HumanDemo/HumanDemo.xcodeproj/project.xcworkspace/xcuserdata/
 visionOS/HumanDemo/Packages
-local.properties
+
+# ReactNativeWrapper
+ReactNativeWrapper/*/ios/Pods
+ReactNativeWrapper/*/ios/build
+ReactNativeWrapper/*/ios/vendor/bundle/
+ReactNativeWrapper/*/ios/*.xcworkspace/xcuserdata
+ReactNativeWrapper/*/ios/*.xcodeproj/xcuserdata
+ReactNativeWrapper/*/ios/*.xcodeproj/project.xcworkspace/xcuserdata/
+ReactNativeWrapper/*/android/.gradle
+ReactNativeWrapper/*/android/local.properties
+ReactNativeWrapper/*/android/.idea
+ReactNativeWrapper/*/android/app/build
+ReactNativeWrapper/*/node_modules/
