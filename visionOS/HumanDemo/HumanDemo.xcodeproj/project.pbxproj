@@ -369,7 +369,7 @@
 			repositoryURL = "https://github.com/PerimeterX/human-security-ios-sdk-spm";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.2;
+				minimumVersion = 4.3.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
