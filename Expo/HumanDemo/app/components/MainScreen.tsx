@@ -78,6 +78,9 @@ const MainScreen = () => {
 
     return (
         <View style={styles.container}>
+            {/* SDK Version */}
+            <Text style={styles.versionText}>SDK Version: {HumanSecurity.sdkVersion()}</Text>
+
             {/* Buttons Container */}
             <View style={styles.buttonContainer}>
                 <Button title="Login" onPress={handleLogin} />
@@ -119,7 +122,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 16,
+        paddingTop: 100,
         backgroundColor: "#fff",
+    },
+    versionText: {
+        fontSize: 14,
+        color: "#666",
+        marginBottom: 20,
+        textAlign: "center",
     },
     buttonContainer: {
         marginVertical: 20,

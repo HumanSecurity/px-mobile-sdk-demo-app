@@ -1,7 +1,7 @@
 PODS:
-  - EXConstants (18.0.9):
+  - EXConstants (18.0.13):
     - ExpoModulesCore
-  - Expo (54.0.10):
+  - Expo (54.0.32):
     - ExpoModulesCore
     - hermes-engine
     - RCTRequired
@@ -26,20 +26,20 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - ExpoAsset (12.0.9):
+  - ExpoAsset (12.0.12):
     - ExpoModulesCore
-  - ExpoFileSystem (19.0.15):
+  - ExpoFileSystem (19.0.21):
     - ExpoModulesCore
-  - ExpoFont (14.0.8):
+  - ExpoFont (14.0.11):
     - ExpoModulesCore
-  - ExpoHead (6.0.8):
+  - ExpoHead (6.0.22):
     - ExpoModulesCore
     - RNScreens
-  - ExpoKeepAwake (15.0.7):
+  - ExpoKeepAwake (15.0.8):
     - ExpoModulesCore
-  - ExpoLinking (8.0.8):
+  - ExpoLinking (8.0.11):
     - ExpoModulesCore
-  - ExpoModulesCore (3.0.18):
+  - ExpoModulesCore (3.0.29):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -62,18 +62,18 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - ExpoSplashScreen (31.0.10):
+  - ExpoSplashScreen (31.0.13):
     - ExpoModulesCore
-  - ExpoSystemUI (6.0.7):
+  - ExpoSystemUI (6.0.9):
     - ExpoModulesCore
   - FBLazyVector (0.81.4)
   - hermes-engine (0.81.4):
     - hermes-engine/Pre-built (= 0.81.4)
   - hermes-engine/Pre-built (0.81.4)
-  - HUMAN (4.2.0)
-  - HumanSecurity (1.0.6):
+  - HUMAN (4.2.1)
+  - HumanSecurity (1.0.9):
     - ExpoModulesCore
-    - HUMAN (= 4.2.0)
+    - HUMAN (= 4.2.1)
   - RCTDeprecation (0.81.4)
   - RCTRequired (0.81.4)
   - RCTTypeSafety (0.81.4):
@@ -1353,7 +1353,7 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-  - react-native-safe-area-context (5.6.1):
+  - react-native-safe-area-context (5.6.2):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1365,8 +1365,8 @@ PODS:
     - React-graphics
     - React-ImageManager
     - React-jsi
-    - react-native-safe-area-context/common (= 5.6.1)
-    - react-native-safe-area-context/fabric (= 5.6.1)
+    - react-native-safe-area-context/common (= 5.6.2)
+    - react-native-safe-area-context/fabric (= 5.6.2)
     - React-NativeModulesApple
     - React-RCTFabric
     - React-renderercss
@@ -1377,7 +1377,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-safe-area-context/common (5.6.1):
+  - react-native-safe-area-context/common (5.6.2):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1399,7 +1399,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-safe-area-context/fabric (5.6.1):
+  - react-native-safe-area-context/fabric (5.6.2):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1846,11 +1846,11 @@ PODS:
 DEPENDENCIES:
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - Expo (from `../node_modules/expo`)
-  - ExpoAsset (from `../node_modules/expo-asset/ios`)
-  - ExpoFileSystem (from `../node_modules/expo-file-system/ios`)
+  - ExpoAsset (from `../node_modules/expo/node_modules/expo-asset/ios`)
+  - ExpoFileSystem (from `../node_modules/expo/node_modules/expo-file-system/ios`)
   - ExpoFont (from `../node_modules/expo-font/ios`)
   - ExpoHead (from `../node_modules/expo-router/ios`)
-  - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
+  - ExpoKeepAwake (from `../node_modules/expo/node_modules/expo-keep-awake/ios`)
   - ExpoLinking (from `../node_modules/expo-linking/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
   - ExpoSplashScreen (from `../node_modules/expo-splash-screen/ios`)
@@ -1938,15 +1938,15 @@ EXTERNAL SOURCES:
   Expo:
     :path: "../node_modules/expo"
   ExpoAsset:
-    :path: "../node_modules/expo-asset/ios"
+    :path: "../node_modules/expo/node_modules/expo-asset/ios"
   ExpoFileSystem:
-    :path: "../node_modules/expo-file-system/ios"
+    :path: "../node_modules/expo/node_modules/expo-file-system/ios"
   ExpoFont:
     :path: "../node_modules/expo-font/ios"
   ExpoHead:
     :path: "../node_modules/expo-router/ios"
   ExpoKeepAwake:
-    :path: "../node_modules/expo-keep-awake/ios"
+    :path: "../node_modules/expo/node_modules/expo-keep-awake/ios"
   ExpoLinking:
     :path: "../node_modules/expo-linking/ios"
   ExpoModulesCore:
@@ -2100,21 +2100,21 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  EXConstants: a95804601ee4a6aa7800645f9b070d753b1142b3
-  Expo: c839a13691635386c0134f204dbbaed3cebff0a8
-  ExpoAsset: 9ba6fbd677fb8e241a3899ac00fa735bc911eadf
-  ExpoFileSystem: 5fb091ea11198e109ceef2bdef2e6e66523e62c4
-  ExpoFont: 86ceec09ffed1c99cfee36ceb79ba149074901b5
-  ExpoHead: 5570e5edbe54fd8f88e51e8b94bf2931caaa7363
-  ExpoKeepAwake: 1a2e820692e933c94a565ec3fbbe38ac31658ffe
-  ExpoLinking: f051f28e50ea9269ff539317c166adec81d9342d
-  ExpoModulesCore: c03ac4bc5a83469ca1222c3954a0499cd059addf
-  ExpoSplashScreen: cbb839de72110dea1851dd3e85080b7923af2540
-  ExpoSystemUI: 6cd74248a2282adf6dec488a75fa532d69dee314
+  EXConstants: fce59a631a06c4151602843667f7cfe35f81e271
+  Expo: 4e503a041c59c4e34c8be262a135848ad5cd3710
+  ExpoAsset: f867e55ceb428aab99e1e8c082b5aee7c159ea18
+  ExpoFileSystem: 858a44267a3e6e9057e0888ad7c7cfbf55d52063
+  ExpoFont: f543ce20a228dd702813668b1a07b46f51878d47
+  ExpoHead: 4425246bc93411f0fe7f6945f95f698e91db8780
+  ExpoKeepAwake: 55f75eca6499bb9e4231ebad6f3e9cb8f99c0296
+  ExpoLinking: 8f0aaf69aa56f832913030503b6263dc6f647f37
+  ExpoModulesCore: f3da4f1ab5a8375d0beafab763739dbee8446583
+  ExpoSplashScreen: bc3cffefca2716e5f22350ca109badd7e50ec14d
+  ExpoSystemUI: 2ad325f361a2fcd96a464e8574e19935c461c9cc
   FBLazyVector: 9e0cd874afd81d9a4d36679daca991b58b260d42
   hermes-engine: 35c763d57c9832d0eef764316ca1c4d043581394
-  HUMAN: 7b432d6980d0e5097eb44f0d65202e31fe43c2a6
-  HumanSecurity: 7b6e54784733f00d0381f0f5a2da1b19f6a8b727
+  HUMAN: f0ea3e42079873c55b7eff69db1cef18a4f1d4e7
+  HumanSecurity: be530c2981433a888b5bad82fb2457bef11ad916
   RCTDeprecation: 7487d6dda857ccd4cb3dd6ecfccdc3170e85dcbc
   RCTRequired: 54128b7df8be566881d48c7234724a78cb9b6157
   RCTTypeSafety: d2b07797a79e45d7b19e1cd2f53c79ab419fe217
@@ -2148,7 +2148,7 @@ SPEC CHECKSUMS:
   React-logger: 7b234de35acb469ce76d6bbb0457f664d6f32f62
   React-Mapbuffer: fbe1da882a187e5898bdf125e1cc6e603d27ecae
   React-microtasksnativemodule: 76905804171d8ccbe69329fc84c57eb7934add7f
-  react-native-safe-area-context: 42a1b4f8774b577d03b53de7326e3d5757fe9513
+  react-native-safe-area-context: 37e680fc4cace3c0030ee46e8987d24f5d3bdab2
   react-native-webview: b29007f4723bca10872028067b07abacfa1cb35a
   React-NativeModulesApple: a9464983ccc0f66f45e93558671f60fc7536e438
   React-oscompat: 73db7dbc80edef36a9d6ed3c6c4e1724ead4236d
