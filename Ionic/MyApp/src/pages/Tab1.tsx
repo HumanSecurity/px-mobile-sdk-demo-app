@@ -32,7 +32,7 @@ const Tab1: React.FC = () => {
 
 export interface HumanPlugin {
   getHttpHeaders(): Promise<{ value: string }>;
-  handleResponse():Promise<{ value: string }>;
+  handleResponse(response: { value: string }): Promise<{ value: string }>;
 }
 
 const Human = registerPlugin<HumanPlugin>('HUMAN');
