@@ -10,7 +10,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@humansecurity/expo-mobile-sdk": "^1.0.9",
+    "@humansecurity/expo-mobile-sdk": "^1.0.10",
     "axios": "^1.7.9",
     "expo": "~54.0.10",
     "expo-font": "~14.0.8",
@@ -35,7 +35,6 @@
   "overrides": {
     "tar": "^7.5.7",
     "node-forge": "^1.3.2",
-    "undici": "^6.23.0",
-    "glob": "^10.5.0"
+    "undici": "^6.23.0"
   }
 }

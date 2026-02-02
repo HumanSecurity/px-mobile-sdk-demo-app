@@ -2,6 +2,7 @@
 
 buildscript {
   repositories {
+        maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     google()
     mavenCentral()
   }
@@ -14,6 +15,7 @@ buildscript {
 
 allprojects {
   repositories {
+        maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     google()
     mavenCentral()
     maven { url 'https://www.jitpack.io' }
