@@ -63,6 +63,7 @@ export default function MainScreen() {
             <View style={styles.mainContainer}>
                 <ScrollView contentContainerStyle={styles.container}>
                     <Text style={styles.title}>Human Security Integration</Text>
+                    <Text style={styles.versionText}>SDK Version: {HumanSecurity.sdkVersion()}</Text>
 
                     {/* 🔹 Login (Axios API Call) */}
                     <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
@@ -112,6 +113,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
         textAlign: 'center',
+    },
+    versionText: {
+        fontSize: 14,
+        color: '#666',
+        textAlign: 'center',
+        marginBottom: 15,
     },
     subTitle: {
         fontSize: 18,
