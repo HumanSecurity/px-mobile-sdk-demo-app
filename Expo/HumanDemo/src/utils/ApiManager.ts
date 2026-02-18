@@ -5,7 +5,7 @@ import { HumanSecurityManager } from "./HumanSecurityManager";
 export class ApiManager {
     static async callApiWithFetch(url: string): Promise<any> {
         try {
-            const headers = HumanSecurityManager.getHeaders();
+            const headers = await HumanSecurityManager.getHeaders();
             // When using account defender.
             // HumanSecurityManager.registerUrl(url);
 
@@ -47,7 +47,7 @@ export class ApiManager {
 
     static async callApiWithAxios(url: string): Promise<any> {
         try {
-            const headers = HumanSecurityManager.getHeaders();
+            const headers = await HumanSecurityManager.getHeaders();
             // When using account defender.
             // HumanSecurityManager.registerUrl(url);
             const response = await axios.get(url, { headers });

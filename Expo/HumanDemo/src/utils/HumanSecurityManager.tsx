@@ -74,8 +74,8 @@ export class HumanSecurityManager {
         }
     }
 
-    static getHeaders(): Record<string, string> {
-        return HumanSecurity.BD.headersForURLRequest(this.appId);
+    static async getHeaders(): Promise<Record<string, string>> {
+        return await HumanSecurity.BD.headersForURLRequest(this.appId);
     }
 
     static registerUrl(url: string): void {

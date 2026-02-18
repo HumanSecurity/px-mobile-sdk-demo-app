@@ -10,7 +10,7 @@ PODS:
     - Capacitor
   - CapacitorStatusBar (5.0.8):
     - Capacitor
-  - HUMAN (4.3.3)
+  - HUMAN (4.3.4)
 
 DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
-  - HUMAN (= 4.3.3)
+  - HUMAN (= 4.3.4)
 
 SPEC REPOS:
   trunk:
@@ -46,8 +46,8 @@ SPEC CHECKSUMS:
   CapacitorHaptics: acd823c6ed0ec2cd968a09316768144b0495a1e7
   CapacitorKeyboard: 38db46e3e9a8024814994b5a909f102f3d27c207
   CapacitorStatusBar: 8e0a8f213504695505dc8c4f808dffbe03aa0e0f
-  HUMAN: 11992a605c1208a8f4f18a92d9b62a94b7e6854e
+  HUMAN: 05883078e23c132ab261f1f1af4a3539663ca93c
 
-PODFILE CHECKSUM: 2beb8d59f947c507be333926bbc3b5daa4c14b88
+PODFILE CHECKSUM: fde0398fd895561a788a5e0979e2e77d222a8bfd
 
 COCOAPODS: 1.16.2

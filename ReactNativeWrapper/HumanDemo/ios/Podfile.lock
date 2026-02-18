@@ -8,7 +8,7 @@ PODS:
   - hermes-engine (0.79.4):
     - hermes-engine/Pre-built (= 0.79.4)
   - hermes-engine/Pre-built (0.79.4)
-  - HUMAN (4.2.1)
+  - HUMAN (4.3.4)
   - RCT-Folly (2024.11.18.00):
     - boost
     - DoubleConversion
@@ -1333,11 +1333,11 @@ PODS:
     - React-jsiexecutor
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
-  - react-native-sdk (1.0.5):
+  - react-native-sdk (1.0.6):
     - DoubleConversion
     - glog
     - hermes-engine
-    - HUMAN (= 4.2.1)
+    - HUMAN (= 4.3.4)
     - RCT-Folly (= 2024.11.18.00)
     - RCTRequired
     - RCTTypeSafety
@@ -1943,7 +1943,7 @@ SPEC CHECKSUMS:
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   hermes-engine: 8b5a5eb386b990287d072fd7b6f6ebd9544dd251
-  HUMAN: f0ea3e42079873c55b7eff69db1cef18a4f1d4e7
+  HUMAN: 05883078e23c132ab261f1f1af4a3539663ca93c
   RCT-Folly: e78785aa9ba2ed998ea4151e314036f6c49e6d82
   RCTDeprecation: 0418ac97b9f53b2e37f473da1663ef3061e46beb
   RCTRequired: b9fde7f981b11aa898f03a70d3d4d36b80f1b16d
@@ -1975,7 +1975,7 @@ SPEC CHECKSUMS:
   React-logger: 694787b12186eeeadccdfdc6769890e9080c1f11
   React-Mapbuffer: a0ee08ac29b8a2c08692aa0d51cefa1c88860e17
   React-microtasksnativemodule: ef2292ca147fa8793305e4693586ad0caf3afad3
-  react-native-sdk: 1c3d275e7a8b03f2466513a035acb0f9378585d9
+  react-native-sdk: f60bbdd4b729f9a793eb87e52edef48c1cb3fa4b
   react-native-webview: 1d8659a52cb8b8504f6c965555d1b27bdd313880
   React-NativeModulesApple: da60186ad0aafff031a9bc86b048711d34acc813
   React-oscompat: 472a446c740e39ee39cd57cd7bfd32177c763a2b

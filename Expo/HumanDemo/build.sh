@@ -7,6 +7,17 @@ echo "Starting build process..."
 echo "Cleaning example project..."
 rm -rf node_modules package-lock.json
 rm -rf ios/Podfile.lock ios/Pods
+
+# Clear Metro and Expo caches
+echo "Clearing Metro cache..."
+rm -rf .expo
+rm -rf "$TMPDIR/metro-*" 2>/dev/null || true
+rm -rf "$TMPDIR/haste-map-*" 2>/dev/null || true
+
+# Clear watchman cache (prevents recrawl issues)
+echo "Clearing watchman cache..."
+watchman watch-del-all 2>/dev/null || true
+
 npm install --loglevel=error
 
 # Run Expo prebuild
