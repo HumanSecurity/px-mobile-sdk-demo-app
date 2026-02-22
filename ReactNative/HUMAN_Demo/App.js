@@ -1,17 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
 
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -19,19 +9,10 @@ import {
   View,
   Button,
   Alert,
+  NativeModules,
+  NativeEventEmitter,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-/* Import PerimeterXModule */
-import {NativeModules, NativeEventEmitter} from 'react-native';
-import type {Message} from 'react-native/Libraries/LogBox/Data/parseLogBoxLog';
 const {HumanModule} = NativeModules;
 
 /* Create new native event emitter */
@@ -65,18 +46,17 @@ const subscriptionHumanChallengeResult = humanEventEmitter.addListener(
   onChallengeResult,
 );
 
-const App: () => Node = () => {
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: isDarkMode ? '#222' : '#f5f5f5',
   };
 
   const sendRequest = async () => {
-    /* Get HTTP headers */
     if (humanHeaders == null) {
-      const headers = await HumanModule.getHTTPHeaders();
-      const obj = JSON.parse(headers);
+      const raw = await HumanModule.getHTTPHeaders();
+      const obj = JSON.parse(raw);
       console.log(`[HUMAN] got headers from getter: ${JSON.stringify(obj)}`);
       await sentRequest(obj);
     } else {
@@ -85,9 +65,7 @@ const App: () => Node = () => {
   };
 
   async function sentRequest(headers) {
-    console.log(
-      `[HUMAN] sending request with headers: ${JSON.stringify(headers)}`,
-    );
+    console.log(`[HUMAN] sending request with headers: ${JSON.stringify(headers)}`);
     try {
       const url = 'https://sample-ios.pxchk.net/login';
       const response = await fetch(url, {
@@ -96,24 +74,18 @@ const App: () => Node = () => {
       });
 
       const json = await response.json();
+      console.log(`[HUMAN] response status: ${response.status}, body: ${JSON.stringify(json)}`);
 
-      console.log('[HUMAN] sending response to native module');
-      /* Send the response to the SDK */
       const result = await HumanModule.handleResponse(
         JSON.stringify(json),
         response.status,
         url,
       );
-      /*
-        check the result:
-        'false' - not handled by the SDK
-        'solved' - challenge solved
-        'cancelled' - challenge cancelled
-      */
+
       console.log(`[HUMAN] result: ${result}`);
       if (result === 'solved') {
         console.log('[HUMAN] challenge solved');
-        wait(5000); // not required. just for simulation.
+        wait(5000);
         await sendRequest();
       } else if (result === 'false') {
         console.log('[HUMAN] request finished successfully');
@@ -135,15 +107,37 @@ const App: () => Node = () => {
   }
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <Button
-        onPress={() => {
-          sendRequest();
-        }}
-        title="Login"
-      />
+    <SafeAreaView style={[backgroundStyle, styles.container]}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <View style={styles.content}>
+        <Text style={styles.title}>HUMAN Demo</Text>
+        <Button
+          onPress={() => {
+            sendRequest();
+          }}
+          title="Login"
+        />
+      </View>
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 30,
+  },
+});
 
 export default App;
