@@ -53,5 +53,5 @@ dependencies {
     }
 
     // HUMAN SDK
-    implementation 'com.humansecurity:sdk:4.2.7'
+    implementation 'com.humansecurity:sdk:4.2.8'
 }
