@@ -17,8 +17,8 @@ object KtorClientExample {
             requestTimeoutMillis = Long.MAX_VALUE
         }
         engine {
-//            addInterceptor(MyInterceptor()) // An example of manual integration. Should be added when PXPolicy.urlRequestInterceptionType is set to `PXPolicyUrlRequestInterceptionType/none`
-            addInterceptor(HSInterceptor()) // When PXPolicy.urlRequestInterceptionType is set to any value rather than `PXPolicyUrlRequestInterceptionType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN
+//            addInterceptor(MyInterceptor()) // An example of manual integration. Should be added when HSPolicy.automaticInterceptorPolicy.interceptorType is set to `HSAutomaticInterceptorType/none`
+            addInterceptor(HSInterceptor()) // When HSPolicy.automaticInterceptorPolicy.interceptorType is set to any value rather than `HSAutomaticInterceptorType/none`. MUST BE THE LAST INTERCEPTOR IN THE CHAIN
         }
     }
 

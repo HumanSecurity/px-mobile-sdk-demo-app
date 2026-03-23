@@ -32,7 +32,7 @@ class HumanManager: NSObject, HSBotDefenderDelegate {
         print("HUMAN Challenge render was failed")
     }
     
-    func humanHeadersWereUpdated(headers: [String : String], forAppId appId: String) {
+    func botDefenderDidUpdateHeaders(headers: [String : String], forAppId appId: String) {
         print("HUMAN Headers were updated")
     }
     

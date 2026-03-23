@@ -65,6 +65,7 @@ class HumanManager: NSObject, HSBotDefenderDelegate {
         // Start HUMAN SDK with your AppID //
         do {
             try HumanSecurity.start(appId: appId, policy: policy)
+            HumanSecurity.BD.delegate = self
         }
         catch {
             print("error: \(error)")
