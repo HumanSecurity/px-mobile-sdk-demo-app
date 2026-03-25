@@ -3,9 +3,9 @@
 buildscript {
     ext {
         buildToolsVersion = "34.0.0"
-        minSdkVersion = 21
-        compileSdkVersion = 35
-        targetSdkVersion = 35
+        minSdkVersion = 23
+        compileSdkVersion = 36
+        targetSdkVersion = 33
         kotlinVersion = '2.1.0'
 
         if (System.properties['os.arch'] == "aarch64") {
@@ -22,7 +22,7 @@ buildscript {
         maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.7.3")
+        classpath("com.android.tools.build:gradle:8.9.3")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("de.undercouch:gradle-download-task:5.0.1")
         // NOTE: Do not place your application dependencies here; they belong
