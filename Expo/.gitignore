@@ -1,0 +1,2 @@
+# Local test tarballs — never commit these
+*.tgz
