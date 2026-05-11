@@ -1,9 +1,7 @@
-#import <React/RCTBridgeDelegate.h>
+#import <RCTAppDelegate.h>
 #import <UIKit/UIKit.h>
 @import HUMAN;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, HSBotDefenderDelegate>
-
-@property (nonatomic, strong) UIWindow *window;
+@interface AppDelegate : RCTAppDelegate <HSBotDefenderDelegate>
 
 @end

@@ -32,7 +32,9 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "expo-font",
+      "@humansecurity/expo-mobile-sdk"
     ],
     "experiments": {
       "typedRoutes": true

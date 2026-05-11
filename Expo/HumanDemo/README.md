@@ -1,6 +1,6 @@
 # **HumanSecurity Expo SDK Example**
 
-**This is an ************[Expo](https://expo.dev)************ project that demonstrates how to use the **********\`\`********** wrapper. This project serves as an example of how to integrate and work with the wrapper, which provides the interface to interact with the native libraries.**
+**This is an [Expo](https://expo.dev) project that demonstrates how to use the `@humansecurity/expo-mobile-sdk` wrapper. This project serves as an example of how to integrate and work with the wrapper, which provides the interface to interact with the native libraries.**
 
 ## **🚀 Get Started**
 
@@ -12,16 +12,56 @@
 ./build.sh
 ```
 
+**Or manually:**
+
+```bash
+npm install
+npx expo prebuild
+```
+
 ### **2. Build and Run the App**
 
 **To build and run the app on your desired platform, use:**
 
 ```bash
-npm run android
-npm run ios
+npx expo run:android
+npx expo run:ios
 ```
 
-> **Note: Ensure you have the necessary setup for running Expo projects on iOS and Android. For iOS, a Mac with Xcode installed is required.**
+**⚠️ Important: This SDK requires a development build. It will NOT work with Expo Go because the HumanSecurity SDK includes native modules that aren't available in the Expo Go app.**
+
+**Note: Ensure you have the necessary setup for running Expo projects on iOS and Android. For iOS, a Mac with Xcode installed is required.**
+
+### **3. Clean Rebuild (if you encounter issues)**
+
+**If you experience build errors or module resolution issues, perform a clean rebuild:**
+
+```bash
+rm -rf node_modules package-lock.json
+rm -rf ios/Pods ios/Podfile.lock
+rm -rf android/.gradle android/app/build
+npm install
+npx expo prebuild --clean
+npx expo run:android   # or npx expo run:ios
+```
+
+## **📦 Required Configuration**
+
+The `@humansecurity/expo-mobile-sdk` must be added as a plugin in your `app.json` to properly configure the native Android dependencies (JFrog Maven repository):
+
+```json
+{
+  "expo": {
+    "plugins": [
+      "@humansecurity/expo-mobile-sdk"
+    ]
+  }
+}
+```
+
+**Note:** The config plugin is available starting from **version 1.0.8 and later**. If you are using an earlier version (1.0.2–1.0.6), do not add the plugin line—simply run `npm install` and `npx expo prebuild`.
+
+This is already configured in this demo project.
 
 ## **📌 Example Overview**
 

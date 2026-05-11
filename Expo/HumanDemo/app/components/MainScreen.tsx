@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Button, StyleSheet, Text, ScrollView } from "react-native";
 import { HumanSecurity, HS_EVENTS } from "@humansecurity/expo-mobile-sdk";
-import { ApiManager } from "@/app/utils/ApiManager";
+import { ApiManager }  from "@/src/utils/ApiManager";
 // Uncomment the next line if you plan to use the WebView in hybrid mode:
 //  import { WebView } from "react-native-webview";
 
@@ -78,6 +78,9 @@ const MainScreen = () => {
 
     return (
         <View style={styles.container}>
+            {/* SDK Version */}
+            <Text style={styles.versionText}>SDK Version: {HumanSecurity.sdkVersion()}</Text>
+
             {/* Buttons Container */}
             <View style={styles.buttonContainer}>
                 <Button title="Login" onPress={handleLogin} />
@@ -119,7 +122,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 16,
+        paddingTop: 100,
         backgroundColor: "#fff",
+    },
+    versionText: {
+        fontSize: 14,
+        color: "#666",
+        marginBottom: 20,
+        textAlign: "center",
     },
     buttonContainer: {
         marginVertical: 20,
