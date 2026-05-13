@@ -68,7 +68,7 @@ RCT_REMAP_METHOD(handleResponse,
                  rejecter:(RCTPromiseRejectBlock)reject) {
   NSData *data = [response dataUsingEncoding:NSUTF8StringEncoding];
   NSHTTPURLResponse *httpURLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:url] statusCode:code HTTPVersion:nil headerFields:nil];
-  BOOL handled = [HumanSecurity.BD handleResponseWithResponse:httpURLResponse data:data callback:^(enum HSBotDefenderChallengeResult result) {
+  BOOL handled = [HumanSecurity.BD handleBlockResponseWithData:data url:url callback:^(enum HSBotDefenderChallengeResult result) {
     resolve((result == HSBotDefenderChallengeResultSolved ? humanSolved : humanCancelled));
   }];
   if (!handled) {

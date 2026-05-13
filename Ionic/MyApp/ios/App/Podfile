@@ -19,7 +19,7 @@ end
 
 target 'App' do
   capacitor_pods
-  pod 'HUMAN', '4.3.4'
+  pod 'HUMAN', '5.0.0'
   # Add your Pods here
 end
 

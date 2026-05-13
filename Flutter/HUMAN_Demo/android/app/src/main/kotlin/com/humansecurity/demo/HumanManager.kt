@@ -33,7 +33,7 @@ class HumanManager {
                 result.success(json.toString())
             }
             else if (call.method == "_handleHumanResponse") {
-                val handled = HumanSecurity.BD.handleResponse(call.arguments!! as String) { challengeResult: HSBotDefenderChallengeResult ->
+                val handled = HumanSecurity.BD.handleBlockResponse(call.arguments!! as String, null) { challengeResult: HSBotDefenderChallengeResult ->
                     result.success(if (challengeResult == HSBotDefenderChallengeResult.SOLVED) "solved" else "cancelled")
                     null
                 }

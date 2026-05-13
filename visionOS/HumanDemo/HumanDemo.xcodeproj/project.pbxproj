@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B4A6F312D65F385002F473E /* HUMAN_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6B4A6F302D65F385002F473E /* HUMAN_SDK */; };
 		B32FED712BFCAE3400DAC4A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32FED702BFCAE3400DAC4A3 /* ViewModel.swift */; };
 		B3752D3F2BFB5A6E006E0BB8 /* HumanDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D3E2BFB5A6E006E0BB8 /* HumanDemoApp.swift */; };
 		B3752D412BFB5A6E006E0BB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D402BFB5A6E006E0BB8 /* ContentView.swift */; };
@@ -15,6 +14,8 @@
 		B3752D462BFB5A6F006E0BB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3752D452BFB5A6F006E0BB8 /* Preview Assets.xcassets */; };
 		B3752D4E2BFB5D25006E0BB8 /* ApiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D4D2BFB5D25006E0BB8 /* ApiDataManager.swift */; };
 		B3752D502BFB5D6B006E0BB8 /* HumanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D4F2BFB5D6B006E0BB8 /* HumanManager.swift */; };
+		B3B2EE3C2FB472FE0014961F /* HUMAN_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = B3B2EE3B2FB472FE0014961F /* HUMAN_SDK */; };
+		B3C504102D9A883600012DD7 /* HUMAN.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3C5035A2D9A7EC200012DD7 /* HUMAN.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		B3752D472BFB5A6F006E0BB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3752D4D2BFB5D25006E0BB8 /* ApiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataManager.swift; sourceTree = "<group>"; };
 		B3752D4F2BFB5D6B006E0BB8 /* HumanManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanManager.swift; sourceTree = "<group>"; };
+		B3C503562D9A7E3900012DD7 /* HUMAN.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:53CYT4DWJK:Perimeterx, Inc."; lastKnownFileType = wrapper.xcframework; path = HUMAN.xcframework; sourceTree = "<group>"; };
+		B3C5035A2D9A7EC200012DD7 /* HUMAN.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HUMAN.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B4A6F312D65F385002F473E /* HUMAN_SDK in Frameworks */,
+				B3B2EE3C2FB472FE0014961F /* HUMAN_SDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				B3752D392BFB5A6E006E0BB8 /* HumanDemo */,
+				B3C503552D9A7E3900012DD7 /* Frameworks */,
 				B3752D382BFB5A6E006E0BB8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +67,7 @@
 				B3752D4D2BFB5D25006E0BB8 /* ApiDataManager.swift */,
 				B3752D422BFB5A6F006E0BB8 /* Assets.xcassets */,
 				B3752D402BFB5A6E006E0BB8 /* ContentView.swift */,
+				B3C5035A2D9A7EC200012DD7 /* HUMAN.bundle */,
 				B3752D3E2BFB5A6E006E0BB8 /* HumanDemoApp.swift */,
 				B3752D4F2BFB5D6B006E0BB8 /* HumanManager.swift */,
 				B3752D472BFB5A6F006E0BB8 /* Info.plist */,
@@ -78,6 +83,14 @@
 				B3752D452BFB5A6F006E0BB8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B3C503552D9A7E3900012DD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3C503562D9A7E3900012DD7 /* HUMAN.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,7 +110,7 @@
 			);
 			name = HumanDemo;
 			packageProductDependencies = (
-				6B4A6F302D65F385002F473E /* HUMAN_SDK */,
+				B3B2EE3B2FB472FE0014961F /* HUMAN_SDK */,
 			);
 			productName = HumanDemo;
 			productReference = B3752D372BFB5A6E006E0BB8 /* HumanDemo.app */;
@@ -128,7 +141,7 @@
 			);
 			mainGroup = B3752D2E2BFB5A6E006E0BB8;
 			packageReferences = (
-				6B4A6F2F2D65F385002F473E /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */,
+				B3B2EE3A2FB472FE0014961F /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */,
 			);
 			productRefGroup = B3752D382BFB5A6E006E0BB8 /* Products */;
 			projectDirPath = "";
@@ -145,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3752D462BFB5A6F006E0BB8 /* Preview Assets.xcassets in Resources */,
+				B3C504102D9A883600012DD7 /* HUMAN.bundle in Resources */,
 				B3752D432BFB5A6F006E0BB8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +316,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perimeterx.visionos-sdk-demo.HumanDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -329,7 +343,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perimeterx.visionos-sdk-demo.HumanDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -364,20 +378,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6B4A6F2F2D65F385002F473E /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */ = {
+		B3B2EE3A2FB472FE0014961F /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/PerimeterX/human-security-ios-sdk-spm";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.4;
+				kind = exactVersion;
+				version = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6B4A6F302D65F385002F473E /* HUMAN_SDK */ = {
+		B3B2EE3B2FB472FE0014961F /* HUMAN_SDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6B4A6F2F2D65F385002F473E /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */;
+			package = B3B2EE3A2FB472FE0014961F /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */;
 			productName = HUMAN_SDK;
 		};
 /* End XCSwiftPackageProductDependency section */

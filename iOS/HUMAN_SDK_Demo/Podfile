@@ -1,9 +1,9 @@
-platform :ios, '12.1'
+platform :ios, '13.0'
 use_frameworks!
 
 target 'HUMAN_SDK_Demo' do
   pod 'Alamofire', '~> 5.9.1'
-  pod 'HUMAN', '4.3.4'
+  pod 'HUMAN', '5.0.0'
 end
 
 post_install do |installer|

@@ -1,20 +1,19 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
 }
 
 android {
     namespace 'com.humansecurity.android_sdk_demo'
 
-    compileSdkVersion 35
-    buildToolsVersion "35.0.0"
+    compileSdkVersion 36
+    buildToolsVersion "36.0.0"
 
     defaultConfig {
         applicationId "com.humansecurity.android_sdk_demo"
-        minSdkVersion 21
-        targetSdkVersion 35
+        minSdkVersion 23
+        targetSdkVersion 36
         versionCode 1
-        versionName "4.0.0"
+        versionName "5.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,9 +28,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = '17'
-    }
 }
 
 dependencies {
@@ -41,14 +37,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 
     // HUMAN SDK - regular integration
-    implementation 'com.humansecurity:sdk:4.2.14'
+    implementation 'com.humansecurity:sdk:5.0.0'
 
     // HUMAN SDK - manual integration
 //    implementation files('libs/HUMAN-release.aar')
-//    implementation 'androidx.core:core-ktx:1.15.0' // any version (select 1.10.1 if your app targets API 33)
-//    implementation 'androidx.lifecycle:lifecycle-process:2.8.7' // min v2.6.0
-//    implementation 'androidx.datastore:datastore-preferences:1.1.1' // any version (select 1.0.0 if your app targets API 33)
-//    implementation 'com.google.android.material:material:1.12.0' // min v1.6.0
-//    implementation 'com.fasterxml.uuid:java-uuid-generator:4.3.0' // min v3.0.0
-//    implementation 'io.ktor:ktor-client-okhttp:3.0.3' // min v3.0.0
+//    implementation 'androidx.core:core-ktx:1.18.0' // any version (select 1.10.1 if your app targets API 33)
+//    implementation 'androidx.lifecycle:lifecycle-process:2.10.0' // min v2.6.0
+//    implementation 'androidx.datastore:datastore-preferences:1.2.1' // any version (select 1.0.0 if your app targets API 33)
+//    implementation 'com.google.android.material:material:1.13.0' // min v1.10.0
+//    implementation 'com.fasterxml.uuid:java-uuid-generator:5.2.0' // min v3.0.0
+//    implementation 'io.ktor:ktor-client-okhttp:3.4.1' // min v3.0.0
 }

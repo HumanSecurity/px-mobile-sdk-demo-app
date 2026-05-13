@@ -49,5 +49,20 @@ struct HumanDemoApp: App {
                 openWindow(id: "MainWindow")
             }
         }
+        
+        WindowGroup(id: HSDoctorAppViewModel.name) {
+            HSDoctorAppView()
+        }
+        .windowResizability(.contentSize)
+        .defaultSize(width: HSDoctorAppViewModel.width,
+                     height: HSDoctorAppViewModel.height, depth: 0)
+        .onChange(of: HSDoctorAppViewModel.shared.showDoctor, {
+            if (HSDoctorAppViewModel.shared.showDoctor) {
+                openHumanChallengeWindow(id: HSDoctorAppViewModel.name)
+            }
+            else {
+                dismissHumanChallengeWindow(id: HSDoctorAppViewModel.name)
+            }
+        })
     }
 }

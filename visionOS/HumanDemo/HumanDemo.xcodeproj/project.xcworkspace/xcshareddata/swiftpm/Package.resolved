@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PerimeterX/human-security-ios-sdk-spm",
       "state" : {
-        "revision" : "3be0ca094ef0dac10af83b92e4d5112e05f407c0",
-        "version" : "4.3.3"
+        "revision" : "efb301152174d6921e2b636df2c43096848f6228",
+        "version" : "5.0.0"
       }
     }
   ],

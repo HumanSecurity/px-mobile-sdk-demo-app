@@ -33,8 +33,7 @@ class HumanManagerPlugin: CAPPlugin {
     @objc func handleResponse(_ call: CAPPluginCall) {
         let response = call.getString("value") ?? ""
         let data = response.data(using: .utf8)
-        let httpURLResponse = HTTPURLResponse(url: URL(string: "https://fake.url.com")!, statusCode: 403, httpVersion: nil, headerFields: nil)
-        let handled = HumanSecurity.BD.handleResponse(response: httpURLResponse!, data: data!) { challengeResult in
+        let handled = HumanSecurity.BD.handleBlockResponse(data: data!, url: nil) { challengeResult in
             call.resolve(["value": challengeResult == .solved ? "solved" : "cancelled"])
         }
         if !handled {

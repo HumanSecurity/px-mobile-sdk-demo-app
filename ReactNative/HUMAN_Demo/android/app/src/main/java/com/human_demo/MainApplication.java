@@ -113,5 +113,4 @@ public class MainApplication extends Application implements ReactApplication, HS
     @Override
     public void botDefenderChallengeRenderFailed(@NonNull String s) {
     }
-
 }

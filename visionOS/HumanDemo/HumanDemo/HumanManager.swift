@@ -32,7 +32,7 @@ class HumanManager: NSObject, HSBotDefenderDelegate {
         print("HUMAN Challenge render was failed")
     }
     
-    func humanHeadersWereUpdated(headers: [String : String], forAppId appId: String) {
+    func botDefenderDidUpdateHeaders(headers: [String : String], forAppId appId: String) {
         print("HUMAN Headers were updated")
     }
     
@@ -58,6 +58,7 @@ class HumanManager: NSObject, HSBotDefenderDelegate {
     private func start(appId: String) {
         // Create and config the policy //
         let policy = HSPolicy()
+        policy.doctorAppPolicy.enabled = true
         
         // Start HUMAN SDK with your AppID //
         do {
@@ -79,13 +80,5 @@ class HumanManager: NSObject, HSBotDefenderDelegate {
         catch {
             print("error: \(error)")
         }
-    }
-    
-    internal func shouldSimulateBlock() -> Bool {
-        if !didSimulateBlock {
-            didSimulateBlock = true
-            return true
-        }
-        return false
     }
 }
