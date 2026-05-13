@@ -1,8 +1,8 @@
 buildscript {
     ext {
-        buildToolsVersion = "35.0.0"
+        buildToolsVersion = "36.0.0"
         minSdkVersion = 24
-        compileSdkVersion = 35
+        compileSdkVersion = 36
         targetSdkVersion = 35
         ndkVersion = "26.1.10909125"
         kotlinVersion = "2.1.0"
@@ -13,9 +13,10 @@ buildscript {
         maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
+        // 8.9.1+ required by androidx.core 1.18.x and HUMAN SDK 5.x (compileSdk 36)
+        classpath("com.android.tools.build:gradle:8.9.1")
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
 
