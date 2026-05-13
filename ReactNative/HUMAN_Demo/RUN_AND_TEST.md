@@ -7,7 +7,7 @@ A React Native demo app showcasing the HUMAN Bot Defender SDK integration using 
 | Platform | SDK | Version |
 |----------|-----|---------|
 | iOS | HUMAN (CocoaPod) | 4.3.4 |
-| Android | com.humansecurity:sdk | 4.2.7 |
+| Android | com.humansecurity:sdk | 4.2.14 |
 | React Native | react-native | 0.79.4 |
 
 ## What the app does
