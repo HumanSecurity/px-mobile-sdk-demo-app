@@ -57,6 +57,7 @@ object HumanManager: HSBotDefenderDelegate {
 
         // Start HUMAN SDK with your AppID //
         HumanSecurity.start(application, appId, policy)
+        HumanSecurity.BD.delegate = HumanManager
     }
 
     private fun setCustomParameters() {

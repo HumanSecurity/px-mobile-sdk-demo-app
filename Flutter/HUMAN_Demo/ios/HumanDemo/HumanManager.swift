@@ -34,8 +34,8 @@ class HumanManager {
                 result(json)
             }
             else if call.method == "_handleHumanResponse" {
-                if let response = call.arguments as? String, let data = response.data(using: .utf8), let httpURLResponse = HTTPURLResponse(url: URL(string: "https://fake.url.com")!, statusCode: 403, httpVersion: nil, headerFields: nil) {
-                    let handled = HumanSecurity.BD.handleResponse(response: httpURLResponse, data: data) { challengeResult in
+                if let response = call.arguments as? String, let data = response.data(using: .utf8) {
+                    let handled = HumanSecurity.BD.handleBlockResponse(data: data, url: nil) { challengeResult in
                         result(challengeResult == .solved ? "solved" : "cancelled")
                     }
                     if handled {

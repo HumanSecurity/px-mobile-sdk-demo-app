@@ -1,3 +1,5 @@
+require 'fileutils'
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -15,7 +17,7 @@ if linkage != nil
 end
 
 target 'HUMAN_Demo' do
-  pod 'HUMAN', '4.3.4'
+  pod 'HUMAN', '5.0.0'
 
   config = use_native_modules!
 
@@ -30,5 +32,26 @@ target 'HUMAN_Demo' do
       config[:reactNativePath],
       :mac_catalyst_enabled => false,
     )
+
+    # fmt 11.0.2 + newer Apple Clang: consteval / basic_format_string build break.
+    # (https://github.com/fmtlib/fmt/issues/4740)
+    # CocoaPods installs headers as read-only (-r--r--r--); chmod u+w first, then patch in place.
+    fmt_base = File.join(__dir__, 'Pods', 'fmt', 'include', 'fmt', 'base.h')
+    if File.exist?(fmt_base)
+      contents = File.read(fmt_base)
+      re = /#elif defined\(__apple_build_version__\) && __apple_build_version__ < 14000029L\r?\n#\s*define FMT_USE_CONSTEVAL 0\s*\/\/ consteval is broken in Apple clang < 14\./
+      if contents.match?(re)
+        patched = contents.sub(re,
+          "#elif defined(__apple_build_version__)\n" \
+          "#  define FMT_USE_CONSTEVAL 0  // Apple clang: disable consteval (fmt 11 / Xcode 16+).")
+        FileUtils.chmod('u+w', fmt_base)
+        File.write(fmt_base, patched)
+        Pod::UI.puts 'Patched Pods/fmt/include/fmt/base.h (FMT_USE_CONSTEVAL) for Apple clang'.green
+      elsif contents.include?('Apple clang: disable consteval')
+        Pod::UI.puts 'Pods/fmt/include/fmt/base.h already patched, skipping'.yellow
+      else
+        Pod::UI.warn 'fmt consteval patch: expected pattern not found in base.h — manual patch may be needed'
+      end
+    end
   end
 end

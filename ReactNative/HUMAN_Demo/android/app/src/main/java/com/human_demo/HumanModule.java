@@ -72,7 +72,7 @@ public class HumanModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void handleResponse(String response, Integer code, String url, Promise promise) {
-        boolean handled = HumanSecurity.INSTANCE.getBD().handleResponse(response, result -> {
+        boolean handled = HumanSecurity.INSTANCE.getBD().handleBlockResponse(response, url, result -> {
             promise.resolve(result == HSBotDefenderChallengeResult.SOLVED ? humanSolved : humanCancelled);
             return null;
         });

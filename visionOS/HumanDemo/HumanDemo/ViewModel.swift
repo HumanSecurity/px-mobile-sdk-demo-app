@@ -22,7 +22,7 @@ class ViewModel {
             self.isLoggedIn = result
             self.loginError = error
             if let error {
-                HSChallengeModelViewHelper.registerError(error: error, uuid: challengeUUID) { result in
+                HumanSecurity.BD.handleBlockError(error: error, uuid: challengeUUID) { result in
                     print("challenge result = \(result)")
                 }
             }

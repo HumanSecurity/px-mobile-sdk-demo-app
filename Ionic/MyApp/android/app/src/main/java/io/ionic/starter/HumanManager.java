@@ -31,7 +31,7 @@ public class HumanManager extends Plugin {
     public void handleResponse(PluginCall call) {
         String response = call.getString("value");
         JSObject ret = new JSObject();
-        boolean handled = HumanSecurity.INSTANCE.getBD().handleResponse(response, result -> {
+        boolean handled = HumanSecurity.INSTANCE.getBD().handleBlockResponse(response, null, result -> {
             ret.put("value", result == HSBotDefenderChallengeResult.SOLVED ? humanSolved : humanCancelled);
             call.resolve(ret);
             return null;

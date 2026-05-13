@@ -36,7 +36,7 @@ class MyInterceptor: Interceptor {
                 }
 
                 // When HSPolicy.automaticInterceptorPolicy.interceptorType is set to `HSAutomaticInterceptorType/none` => pass the data and response to HUMAN to handle it //
-                val isHandledByPX = HumanSecurity.BD.handleResponse(responseBody) { result ->
+                val isHandledByPX = HumanSecurity.BD.handleBlockResponse(responseBody, chain.request().url.toString()) { result ->
                     println("challenge result = $result")
                 }
                 if (isHandledByPX) {

@@ -33,15 +33,10 @@ class ApiDataManager {
         let headers = HumanSecurity.BD.headersForURLRequest(forAppId: nil)
         request.allHTTPHeaderFields = headers
         
-        if HumanManager.shared.shouldSimulateBlock() {
-            request.setValue("PhantomJS", forHTTPHeaderField: "user-agent")
-            request.setValue("blabla", forHTTPHeaderField: "X-PX-AUTHORIZATION")
-        }
-        
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data, let response = response as? HTTPURLResponse {
+            if let data = data {
                 if HumanManager.shared.challengeOnWindow {
-                    let isHandled = HumanSecurity.BD.handleResponse(response: response, data: data) { result in
+                    let isHandled = HumanSecurity.BD.handleBlockResponse(data: data, url: request.url?.absoluteString) { result in
                         print("challenge result = \(result)")
                     }
                     if isHandled {
@@ -50,7 +45,7 @@ class ApiDataManager {
                     }
                 }
                 else {
-                    if let blockError = HumanSecurity.BD.blockResponseError(response: response, data: data) {
+                    if let blockError = HumanSecurity.BD.blockError(data: data, url: request.url?.absoluteString) {
                         completion(false, blockError)
                         return
                     }
