@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		B32FED992C0E05CC00DAC4A3 /* HUMAN.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B32FED982C0E05CC00DAC4A3 /* HUMAN.bundle */; };
-		B3C504142D9BE09700012DD7 /* HUMAN.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32FED952C0E00EF00DAC4A3 /* HUMAN.xcframework */; };
 		D46C9C4A997574E8E516F5F4 /* Pods_HumanDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284CC93E3011F21540B37A14 /* Pods_HumanDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +63,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D46C9C4A997574E8E516F5F4 /* Pods_HumanDemo.framework in Frameworks */,
-				B3C504142D9BE09700012DD7 /* HUMAN.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +152,7 @@
 				97C146EC1CF9000F007C117D /* Resources */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				B36FFD702D2FBF3900D3A913 /* Embed Frameworks */,
+				DFBD83CA054B1D8BF27F2F7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,6 +263,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFBD83CA054B1D8BF27F2F7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HumanDemo/Pods-HumanDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HumanDemo/Pods-HumanDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HumanDemo/Pods-HumanDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

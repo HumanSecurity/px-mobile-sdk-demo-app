@@ -14,6 +14,7 @@
 		B3752D462BFB5A6F006E0BB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3752D452BFB5A6F006E0BB8 /* Preview Assets.xcassets */; };
 		B3752D4E2BFB5D25006E0BB8 /* ApiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D4D2BFB5D25006E0BB8 /* ApiDataManager.swift */; };
 		B3752D502BFB5D6B006E0BB8 /* HumanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3752D4F2BFB5D6B006E0BB8 /* HumanManager.swift */; };
+		B3B2EE3C2FB472FE0014961F /* HUMAN_SDK in Frameworks */ = {isa = PBXBuildFile; productRef = B3B2EE3B2FB472FE0014961F /* HUMAN_SDK */; };
 		B3C504102D9A883600012DD7 /* HUMAN.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3C5035A2D9A7EC200012DD7 /* HUMAN.bundle */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B2EE3C2FB472FE0014961F /* HUMAN_SDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +110,7 @@
 			);
 			name = HumanDemo;
 			packageProductDependencies = (
+				B3B2EE3B2FB472FE0014961F /* HUMAN_SDK */,
 			);
 			productName = HumanDemo;
 			productReference = B3752D372BFB5A6E006E0BB8 /* HumanDemo.app */;
@@ -138,6 +141,7 @@
 			);
 			mainGroup = B3752D2E2BFB5A6E006E0BB8;
 			packageReferences = (
+				B3B2EE3A2FB472FE0014961F /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */,
 			);
 			productRefGroup = B3752D382BFB5A6E006E0BB8 /* Products */;
 			projectDirPath = "";
@@ -372,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B3B2EE3A2FB472FE0014961F /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PerimeterX/human-security-ios-sdk-spm";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B3B2EE3B2FB472FE0014961F /* HUMAN_SDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3B2EE3A2FB472FE0014961F /* XCRemoteSwiftPackageReference "human-security-ios-sdk-spm" */;
+			productName = HUMAN_SDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3752D2F2BFB5A6E006E0BB8 /* Project object */;
 }
