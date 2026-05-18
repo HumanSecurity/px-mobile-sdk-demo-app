@@ -10,7 +10,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@humansecurity/expo-mobile-sdk": "file:humansecurity-expo-mobile-sdk-2.0.0.tgz",
+    "@humansecurity/expo-mobile-sdk": "^2.0.0",
     "axios": "^1.7.9",
     "expo": "^55.0.0",
     "expo-constants": "~55.0.16",
