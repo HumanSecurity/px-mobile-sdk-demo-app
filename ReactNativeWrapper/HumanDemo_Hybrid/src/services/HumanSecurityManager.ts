@@ -24,8 +24,9 @@ export class HumanSecurityManager {
     }
 
     // 🔹 GET HEADERS (for API calls)
-    static getHeaders(): Record<string, string> {
-        return HumanSecurity.BD.headersForURLRequest(this.appId) || {};
+    static async getHeaders(): Promise<Record<string, string>> {
+        const headers = await HumanSecurity.BD.headersForURLRequest(this.appId);
+        return headers ?? {};
     }
 
     // 🔹 REGISTER URL for security tracking

@@ -38,12 +38,13 @@ export default function MainScreen() {
         };
     }, []);
 
-    // Handle Login (API Call via Axios)
     const handleLogin = async () => {
         ApiManager.fetchDataWithAxios(login_url).then((response) => {
-            // Optionally, set the user if using account defender:
-            // HumanSecurityManager.setUserId('user123');
-            setLoginResponse(response.status);
+            setLoginResponse(
+                response.challengeResult
+                    ? `Challenge: ${response.challengeResult}`
+                    : `Status: ${response.status}`
+            );
         }, (error) => {
             setLoginResponse(`Login Failed: ${error}`);
         });
@@ -52,7 +53,11 @@ export default function MainScreen() {
     // Handle API Call (via Fetch)
     const handleApiCall = async () => {
         ApiManager.fetchData(api_url).then((response) => {
-            setApiResponse(response.status);
+            setApiResponse(
+                response.challengeResult
+                    ? `Challenge: ${response.challengeResult}`
+                    : `Status: ${response.status}`
+            );
         }, (error) => {
             setApiResponse(`API Call Failed: ${error}`);
         });

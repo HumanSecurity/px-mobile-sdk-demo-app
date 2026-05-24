@@ -67,14 +67,13 @@ if (canHandle) {
 
 In the `ApiManager` class, we demonstrate how to implement Bot Defender when making API requests. 
 
-This includes adding security headers and handling challenges when sending requests using both regular `fetch` and `axios`. 
-When using **axios**, the challenge response is handled in the **catch block** since it comes back as an error,
-unlike the **fetch** example where the challenge is handled as part of the response. 
+This includes adding security headers and handling challenges when making API requests using both `fetch` and `axios`.
 
-Additionally, when using axios, you should apply `JSON.stringify` to the response text before passing it to the challenge handler.
+With **fetch**, check the response status and pass the response body to `canHandleResponse` / `handleResponse`.
 
-These two examples are provided to highlight the subtle differences in handling security responses between different request methods. 
-If your implementation uses another request method, it is important to recognize these differences and adapt accordingly.
+With **axios**, non-2xx responses (such as 403 blocks) reject the promise, so handle the block in the **catch** block using `error.response.data`. If the body is already a string, pass it as-is; if axios parsed it as an object, use `JSON.stringify` before calling the SDK.
+
+These two examples highlight the differences between request libraries. Adapt accordingly if you use another HTTP client.
 
 ### 🔹 Account Defender
 
