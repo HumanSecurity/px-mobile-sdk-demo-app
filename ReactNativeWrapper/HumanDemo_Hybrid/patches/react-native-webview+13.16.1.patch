@@ -1,0 +1,20 @@
+diff --git a/node_modules/react-native-webview/apple/RNCWebViewManager.mm b/node_modules/react-native-webview/apple/RNCWebViewManager.mm
+index f8f375f..ee2a5a0 100644
+--- a/node_modules/react-native-webview/apple/RNCWebViewManager.mm
++++ b/node_modules/react-native-webview/apple/RNCWebViewManager.mm
+@@ -42,7 +42,14 @@ - (RNCView *)view
+ 
+ RCT_EXPORT_VIEW_PROPERTY(source, NSDictionary)
+ // New arch only
+-RCT_CUSTOM_VIEW_PROPERTY(newSource, NSDictionary, RNCWebViewImpl) {}
++// Forward newSource to the native view when Fabric falls back to the view manager path.
++RCT_CUSTOM_VIEW_PROPERTY(newSource, NSDictionary, RNCWebViewImpl) {
++  if (json == nil) {
++    [view setSource:@{}];
++  } else {
++    [view setSource:json];
++  }
++}
+ RCT_EXPORT_VIEW_PROPERTY(onFileDownload, RCTDirectEventBlock)
+ RCT_EXPORT_VIEW_PROPERTY(onLoadingStart, RCTDirectEventBlock)
+ RCT_EXPORT_VIEW_PROPERTY(onLoadingFinish, RCTDirectEventBlock)

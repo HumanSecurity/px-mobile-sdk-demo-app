@@ -7,19 +7,17 @@ This project serves as an example of how to integrate and work with the wrapper,
 
 ### **1. Install Dependencies**
 
-**Run the following script to clean old dependencies, install fresh ones, and link native dependencies:**
+**Run the clean build script to reset dependencies and native projects:**
 
 ```bash
-npm install
+./build.sh
 ```
-If you encounter any issues with peer dependencies, you can use the following command to install them:
+
+Or install manually:
+
 ```bash
-npm install --legacy-peer-deps
-```
-Then run:
-```bash
-cd ios && pod install
-cd ..
+yarn install
+cd ios && bundle install && bundle exec pod install && cd ..
 ```
 
 ### **2. Build and Run the App**
@@ -27,8 +25,8 @@ cd ..
 **To build and run the app on your desired platform, run from terminal (not from IDE):**
 
 ```bash
-npm run android
-npm run ios
+yarn android
+yarn ios
 ```
 
 > **Note: Ensure you have the necessary setup for running React Native projects on iOS and Android. For iOS, a Mac with Xcode installed is required.**

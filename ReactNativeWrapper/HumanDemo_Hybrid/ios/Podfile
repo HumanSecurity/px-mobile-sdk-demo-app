@@ -1,3 +1,5 @@
+ENV['RCT_NEW_ARCH_ENABLED'] = '1'
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
@@ -36,5 +38,17 @@ target 'HumanDemo' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+
+    # Fix for Xcode 26+ fmt consteval compilation error
+    # Force FMT_USE_CONSTEVAL=0 by patching all redefinitions in base.h
+    pods_dir = installer.sandbox.root
+    base_h_path = pods_dir.join("fmt/include/fmt/base.h")
+    if File.exist?(base_h_path)
+      content = File.read(base_h_path)
+      unless content.include?('// Patched for Xcode 26')
+        patched_content = content.gsub('#  define FMT_USE_CONSTEVAL 1', '#  define FMT_USE_CONSTEVAL 0  // Patched for Xcode 26')
+        File.write(base_h_path, patched_content)
+      end
+    end
   end
 end

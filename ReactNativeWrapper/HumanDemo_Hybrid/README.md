@@ -7,28 +7,28 @@ This project serves as an example of how to integrate and work with the wrapper,
 
 ### **1. Install Dependencies**
 
-**Run the following script to clean old dependencies, install fresh ones, and link native dependencies:**
+**Run the clean build script to reset dependencies and native projects:**
 
 ```bash
-npm install
+./build.sh
 ```
-If you encounter any issues with peer dependencies, you can use the following command to install them:
+
+Or install manually:
+
 ```bash
-npm install --legacy-peer-deps
+yarn install
+cd ios && bundle install && bundle exec pod install && cd ..
 ```
-Then run:
-```bash
-cd ios && pod install
-cd ..
-```
+
+> `yarn install` applies a small patch to `react-native-webview` (via `patch-package`) that fixes blank WebViews on iOS with New Architecture. See **iOS WebView note** below.
 
 ### **2. Build and Run the App**
 
 **To build and run the app on your desired platform, run from terminal (not from IDE):**
 
 ```bash
-npm run android
-npm run ios
+yarn android
+yarn ios
 ```
 
 > **Note: Ensure you have the necessary setup for running React Native projects on iOS and Android. For iOS, a Mac with Xcode installed is required.**
@@ -141,7 +141,11 @@ For **Account Defender (AD)**, you can set additional data:
 HumanSecurity.AD.setAdditionalData(parameters, appId);
 ```
 
-## ⚠️ Important Note
+## ⚠️ Important Notes
+
+### iOS WebView (Hybrid mode)
+
+This example embeds a `react-native-webview` for hybrid mode. On iOS with React Native New Architecture, upstream `react-native-webview` can render a blank white box because the URL is passed as `newSource` but the legacy native handler ignores it. We ship a `patch-package` fix in `patches/` until an official release includes [PR #3880](https://github.com/react-native-webview/react-native-webview/pull/3880). After `yarn install`, run a fresh iOS build.
 
 The Doctor App feature is not supported in this wrapper.
 To simulate a challenge, use your own App ID, perform an API call, and block the VID from the HUMAN portal, **[see our official documentation for details](https://docs.humansecurity.com/applications-and-accounts/docs/how-to-test-the-sdk-in-your-app)**.

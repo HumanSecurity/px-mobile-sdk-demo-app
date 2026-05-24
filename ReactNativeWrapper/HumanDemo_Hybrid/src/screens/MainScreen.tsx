@@ -63,7 +63,11 @@ export default function MainScreen() {
     return (
         <SafeAreaView style={styles.safeArea}>
             <View style={styles.mainContainer}>
-                <ScrollView contentContainerStyle={styles.container}>
+                <ScrollView
+                    style={styles.scrollContent}
+                    contentContainerStyle={styles.container}
+                    keyboardShouldPersistTaps="handled"
+                >
                     <Text style={styles.title}>Human Security Integration</Text>
 
                     {/* 🔹 Login (Axios API Call) */}
@@ -85,16 +89,20 @@ export default function MainScreen() {
                     )}
 
                     <Text style={styles.subTitle}>Event Log:</Text>
-                    <ScrollView style={styles.eventLog}>
+                    <ScrollView style={styles.eventLog} nestedScrollEnabled>
                       {eventLog.map((event, index) => (
                         <Text key={index} style={styles.eventItem}>{event}</Text>
                       ))}
                     </ScrollView>
-
-                    <View style={styles.webviewContainer}>
-                        <WebView source={{ uri: web_site }} style={styles.webview} />
-                    </View>
                 </ScrollView>
+
+                <View style={styles.webviewContainer}>
+                    <WebView
+                        source={{ uri: web_site }}
+                        style={styles.webview}
+                        originWhitelist={['*']}
+                    />
+                </View>
             </View>
         </SafeAreaView>
     );
@@ -107,6 +115,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     mainContainer: {
+        flex: 1,
+    },
+    scrollContent: {
         flex: 1,
     },
     container: {
@@ -145,10 +156,10 @@ const styles = StyleSheet.create({
         height: 400,
         borderTopWidth: 1,
         borderColor: '#ccc',
-        marginTop: 20,
     },
     webview: {
         flex: 1,
+        backgroundColor: 'transparent',
     },
     loginButton: {
         backgroundColor: '#3498db',
