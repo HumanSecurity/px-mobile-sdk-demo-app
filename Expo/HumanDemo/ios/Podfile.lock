@@ -1,7 +1,7 @@
 PODS:
   - EXConstants (55.0.16):
     - ExpoModulesCore
-  - Expo (55.0.24):
+  - Expo (55.0.26):
     - ExpoModulesCore
     - hermes-engine
     - RCTRequired
@@ -30,13 +30,13 @@ PODS:
     - ExpoModulesCore
   - ExpoDomWebView (55.0.6):
     - ExpoModulesCore
-  - ExpoFileSystem (55.0.20):
+  - ExpoFileSystem (55.0.22):
     - ExpoModulesCore
-  - ExpoFont (55.0.7):
+  - ExpoFont (55.0.8):
     - ExpoModulesCore
   - ExpoGlassEffect (55.0.11):
     - ExpoModulesCore
-  - ExpoImage (55.0.10):
+  - ExpoImage (55.0.11):
     - ExpoModulesCore
     - libavif/libdav1d
     - SDWebImage (~> 5.21.0)
@@ -78,12 +78,12 @@ PODS:
     - React-Core
     - React-runtimescheduler
     - ReactCommon
-  - ExpoRouter (55.0.14):
+  - ExpoRouter (55.0.16):
     - ExpoModulesCore
     - RNScreens
   - ExpoSplashScreen (55.0.21):
     - ExpoModulesCore
-  - ExpoSymbols (55.0.8):
+  - ExpoSymbols (55.0.9):
     - ExpoModulesCore
   - ExpoSystemUI (55.0.18):
     - ExpoModulesCore
@@ -92,7 +92,7 @@ PODS:
     - hermes-engine/Pre-built (= 0.14.1)
   - hermes-engine/Pre-built (0.14.1)
   - HUMAN (5.0.0)
-  - HumanSecurity (2.0.0):
+  - HumanSecurity (2.0.1):
     - ExpoModulesCore
     - HUMAN (= 5.0.0)
   - libavif/core (1.0.0)
@@ -2342,26 +2342,26 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   EXConstants: dadbeba983acc30f855a919658a2b34fbd86615d
-  Expo: 16f3bba63c001ae67319631affd50e83c429d7c6
+  Expo: a74260e921728e06b81d3811a508acd5858812d6
   ExpoAsset: 7721c5c4ae2a7c3c8147a046727ac6c020b05648
   ExpoDomWebView: b2e9d601f9cb77d3c97da73234e175b64be91928
-  ExpoFileSystem: 5d01aa6678ccde01172351aad5720ee16845ae82
-  ExpoFont: a95606f106a6394df8edf6d0d87aab9020af5ad4
+  ExpoFileSystem: 61e663d0bbd1a973d324530d1d6ee559a5e5192c
+  ExpoFont: a7e34a75bdfb703fa07a0e87807f836236608c76
   ExpoGlassEffect: 2dedac2fe817f9b02d0dad29ce0aef7afebc5cd4
-  ExpoImage: 74d26278507b0b0d85b1e50562412172603f59eb
+  ExpoImage: 5854bd51edd7c0a775755473598f9daeb3fde4e3
   ExpoKeepAwake: d0eb7a0719500d2a43fbf29b6f79e84d70c75ebf
   ExpoLinking: 40f36cf134ea6930f37867858c0643877b865d53
   ExpoLogBox: a678d36477ab9544fe63e0b5328a0716539b6774
   ExpoModulesCore: 998d0fbf7f687b1ff715b87cec779fc92be628ac
   ExpoModulesJSI: 964334271fc77832736f66ee1785761cdc778dbe
-  ExpoRouter: 0948f6a7c3949e8405099663e55d149408afc021
+  ExpoRouter: e0e2aa4b03843e7abfa3e63e0cdd6c642d74780f
   ExpoSplashScreen: 049301b226bce8284fcafb7923fcad3a43f23a9f
-  ExpoSymbols: 446a0835f3fb505214891d72baf5edf1de2ee4e7
+  ExpoSymbols: 896159288ad708e1a32dc12c92fe5f90bff01126
   ExpoSystemUI: fbc4f8af83f2b8338c1de69a79624769536f09d1
   FBLazyVector: 427fa1856a481856091061293ce865a75aa4f20f
   hermes-engine: e1f867f38fd68da562060f95361535944915e06b
   HUMAN: 62f8e0467c43d2774f3da252471862f69b6f8d87
-  HumanSecurity: c789c7f9ff6b3e20a2097e8f81e35e5fb3c4ab7f
+  HumanSecurity: 97ce9eae146d604d21e17e40c15081291715db19
   libavif: 5f8e715bea24debec477006f21ef9e95432e254d
   libdav1d: 23581a4d8ec811ff171ed5e2e05cd27bad64c39f
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
