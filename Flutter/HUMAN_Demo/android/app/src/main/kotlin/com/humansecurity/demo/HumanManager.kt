@@ -3,6 +3,7 @@ package com.perimeterx.perimeterx
 import android.app.Application
 import com.humansecurity.mobile_sdk.HumanSecurity
 import com.humansecurity.mobile_sdk.main.HSBotDefenderChallengeResult
+import com.humansecurity.mobile_sdk.main.policy.HSChallengePresentationType
 import com.humansecurity.mobile_sdk.main.policy.HSAutomaticInterceptorType
 import com.humansecurity.mobile_sdk.main.policy.HSPolicy
 import com.humansecurity.mobile_sdk.main.policy.HSStorageMethod
@@ -20,6 +21,7 @@ class HumanManager {
                 policy.storageMethod = HSStorageMethod.DATA_STORE
                 policy.automaticInterceptorPolicy.interceptorType = HSAutomaticInterceptorType.NONE
                 policy.doctorAppPolicy.enabled = true
+                policy.challengePresentationType = HSChallengePresentationType.CENTER
                 HumanSecurity.start(application, "PXj9y4Q8Em", policy)
             }
             catch (exception: Exception) {

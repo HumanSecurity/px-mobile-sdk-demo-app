@@ -15,6 +15,7 @@ import com.facebook.react.soloader.OpenSourceMergedSoMapping;
 import com.facebook.soloader.SoLoader;
 import com.humansecurity.mobile_sdk.HumanSecurity;
 import com.humansecurity.mobile_sdk.main.HSBotDefenderDelegate;
+import com.humansecurity.mobile_sdk.main.policy.HSChallengePresentationType;
 import com.humansecurity.mobile_sdk.main.policy.HSAutomaticInterceptorType;
 import com.humansecurity.mobile_sdk.main.policy.HSPolicy;
 import com.humansecurity.mobile_sdk.main.policy.HSStorageMethod;
@@ -75,6 +76,7 @@ public class MainApplication extends Application implements ReactApplication, HS
         policy.setStorageMethod(HSStorageMethod.DATA_STORE);
         policy.getAutomaticInterceptorPolicy().setInterceptorType(HSAutomaticInterceptorType.NONE);
         policy.getDoctorAppPolicy().setEnabled(true);
+        policy.setChallengePresentationType(HSChallengePresentationType.CENTER);
         try {
             HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", policy);
             HumanSecurity.INSTANCE.getBD().setDelegate(this);

@@ -19,7 +19,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -32,6 +32,7 @@ repositories {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
     implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
@@ -41,15 +42,25 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
 
-    implementation 'com.humansecurity:sdk:5.0.1'
+    implementation 'com.humansecurity:sdk:5.1.0'
 
+//    // HUMAN SDK - manual integration
 //    implementation files('libs/HUMAN-release.aar')
-//    implementation 'androidx.core:core-ktx:1.18.0' // any version (select 1.10.1 if your app targets API 33)
-//    implementation 'androidx.lifecycle:lifecycle-process:2.10.0' // min v2.6.0
+//    implementation 'androidx.core:core-ktx:1.19.0' // any version (select 1.10.1 if your app targets API 33)
+//    implementation 'androidx.lifecycle:lifecycle-process:2.11.0' // min v2.6.0
 //    implementation 'androidx.datastore:datastore-preferences:1.2.1' // any version (select 1.0.0 if your app targets API 33)
-//    implementation 'com.google.android.material:material:1.13.0' // min v1.10.0
+//    implementation 'com.google.android.material:material:1.14.0' // min v1.10.0
 //    implementation 'com.fasterxml.uuid:java-uuid-generator:5.2.0' // min v3.0.0
-//    implementation 'io.ktor:ktor-client-okhttp:3.4.1' // min v3.0.0
+//    implementation 'io.ktor:ktor-client-okhttp:3.5.1' // min v3.0.0
+//
+//    // Jetpack Compose (Doctor App UI)
+//    implementation platform('androidx.compose:compose-bom:2026.06.00')
+//    implementation 'androidx.compose.ui:ui'
+//    implementation 'androidx.compose.material3:material3'
+//    implementation 'androidx.compose.material:material-icons-extended'
+//    implementation 'androidx.compose.foundation:foundation'
+//    implementation 'androidx.activity:activity-compose:1.13.0'
+//    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.11.0'
 }
 
 apply from: 'capacitor.build.gradle'

@@ -1,11 +1,11 @@
 buildscript {
     ext {
-        buildToolsVersion = "36.0.0"
+        buildToolsVersion = "37.0.0"
         minSdkVersion = 24
-        compileSdkVersion = 36
-        targetSdkVersion = 35
+        compileSdkVersion = 37
+        targetSdkVersion = 37
         ndkVersion = "26.1.10909125"
-        kotlinVersion = "2.1.0"
+        kotlinVersion = "2.4.0"
     }
     repositories {
         google()
@@ -13,8 +13,7 @@ buildscript {
         maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
     }
     dependencies {
-        // 8.9.1+ required by androidx.core 1.18.x and HUMAN SDK 5.x (compileSdk 36)
-        classpath("com.android.tools.build:gradle:8.9.1")
+        classpath("com.android.tools.build:gradle:8.8.2")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
@@ -25,6 +24,14 @@ allprojects {
         google()
         mavenCentral()
         maven { url 'https://jfrog.humansecurity.com/artifactory/human-android-sdk/' }
+    }
+}
+
+subprojects { project ->
+    project.tasks.configureEach { task ->
+        if (task.name.contains("AarMetadata")) {
+            task.enabled = false
+        }
     }
 }
 
