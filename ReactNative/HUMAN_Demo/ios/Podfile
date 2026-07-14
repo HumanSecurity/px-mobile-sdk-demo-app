@@ -17,7 +17,7 @@ if linkage != nil
 end
 
 target 'HUMAN_Demo' do
-  pod 'HUMAN', '5.0.0'
+  pod 'HUMAN', '5.1.0'
 
   config = use_native_modules!
 
