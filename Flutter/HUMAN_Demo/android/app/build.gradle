@@ -56,7 +56,7 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${rootProject.ext.kotlin_version}"
 
-    implementation 'com.humansecurity:sdk:5.1.0'
+    implementation 'com.humansecurity:sdk:5.2.0'
 
 //    // HUMAN SDK - manual integration
 //    implementation files('libs/HUMAN-release.aar')

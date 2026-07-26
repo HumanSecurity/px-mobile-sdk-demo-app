@@ -39,7 +39,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
 
     // HUMAN SDK - regular integration
-    implementation 'com.humansecurity:sdk:5.1.0'
+    implementation 'com.humansecurity:sdk:5.2.0'
 
 //    // HUMAN SDK - manual integration
 //    implementation files('libs/HUMAN-release.aar')
