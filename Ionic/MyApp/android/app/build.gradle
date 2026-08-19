@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
 
-    implementation 'com.humansecurity:sdk:5.2.0'
+    implementation 'com.humansecurity:sdk:5.3.0'
 
 //    // HUMAN SDK - manual integration
 //    implementation files('libs/HUMAN-release.aar')
