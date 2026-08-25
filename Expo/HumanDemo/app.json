@@ -33,7 +33,19 @@
         }
       ],
       "expo-font",
-      "@humansecurity/expo-mobile-sdk"
+      "@humansecurity/expo-mobile-sdk",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 37,
+            "targetSdkVersion": 36
+          },
+          "ios": {
+            "deploymentTarget": "16.4"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

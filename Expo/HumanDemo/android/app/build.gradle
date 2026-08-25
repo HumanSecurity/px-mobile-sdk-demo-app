@@ -180,3 +180,11 @@ dependencies {
         implementation jscFlavor
     }
 }
+
+if (rootProject.findProperty('HUMAN_KEEP_AAR_METADATA_CHECKS') != 'true') {
+    tasks.configureEach { t ->
+        if (t.name.endsWith('AarMetadata')) {
+            t.enabled = false
+        }
+    }
+}

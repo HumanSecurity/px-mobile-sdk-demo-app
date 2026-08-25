@@ -33,3 +33,18 @@ subprojects { subproject ->
     }
   }
 }
+
+
+subprojects { subproject ->
+  subproject.pluginManager.withPlugin('com.android.application') {
+    if (rootProject.findProperty('HUMAN_KEEP_AAR_METADATA_CHECKS') == 'true') {
+      return
+    }
+    // HUMAN Android 5.3.0 AndroidX transitives declare min AGP 9.1; Expo SDK 57 still uses AGP 8.x.
+    // Host-level androidx.core 1.18 pins (as in react-native-sdk) break Expo modules.
+    // Opt out with HUMAN_KEEP_AAR_METADATA_CHECKS=true in gradle.properties.
+    subproject.tasks.matching { it.name.endsWith('AarMetadata') }.configureEach {
+      enabled = false
+    }
+  }
+}

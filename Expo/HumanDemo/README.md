@@ -2,6 +2,8 @@
 
 **This is an [Expo](https://expo.dev) project that demonstrates how to use the `@humansecurity/expo-mobile-sdk` wrapper. This project serves as an example of how to integrate and work with the wrapper, which provides the interface to interact with the native libraries.**
 
+This demo targets **Expo SDK 57** / React Native **0.86** and `@humansecurity/expo-mobile-sdk` **3.0.0** (HUMAN iOS 5.3.1, Android 5.3.0). Stay on wrapper **2.0.1** if the host is still Expo SDK 55. Android prebuild uses compileSdk 37 and targetSdk 36 (applied by the config plugin and `expo-build-properties`).
+
 ## **🚀 Get Started**
 
 ### **1. Install Dependencies**
