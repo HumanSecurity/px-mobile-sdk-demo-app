@@ -2,7 +2,7 @@ buildscript {
     ext {
         buildToolsVersion = "36.0.0"
         minSdkVersion = 24
-        compileSdkVersion = 36
+        compileSdkVersion = 37
         targetSdkVersion = 36
         ndkVersion = "27.1.12297006"
         kotlinVersion = "2.1.0"
@@ -33,6 +33,17 @@ allprojects {
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
         kotlinOptions {
             freeCompilerArgs += ["-Xskip-metadata-version-check"]
+        }
+    }
+
+    // HUMAN Android SDK 5.3.0 pulls AndroidX 1.19 / lifecycle-compose 2.11,
+    // which AGP 8.12 (RN 0.86) cannot compile. Prefer AGP 9.1+ in real apps.
+    configurations.configureEach {
+        resolutionStrategy {
+            force 'androidx.core:core:1.18.0'
+            force 'androidx.core:core-ktx:1.18.0'
+            force 'androidx.lifecycle:lifecycle-runtime-compose:2.8.7'
+            force 'androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7'
         }
     }
 }
