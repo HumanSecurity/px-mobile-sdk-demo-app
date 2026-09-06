@@ -1427,7 +1427,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-sdk (3.0.0):
+  - react-native-sdk (3.0.1):
     - hermes-engine
     - HUMAN (= 5.3.1)
     - RCTRequired
@@ -2153,7 +2153,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: 44dd007f917e2396afa0e70bbd70273237d93fde
   React-microtasksnativemodule: f413ee411341fb3c34d20e85e9f6f524921fab15
   React-mutationobservernativemodule: 58f6d2adf7d98e72b241608dfa2ddce414d2a4e7
-  react-native-sdk: e856acbcc4c1a46114ed5bee9aa2b63c302bf26a
+  react-native-sdk: e3a6f8e7b8184db533a0adbe8fd758c42e80e139
   react-native-webview: 4b1217071d94a56a6f749e25c751e51a1cec25b6
   React-NativeModulesApple: 167e532fb9bae30f3c66636b8ee0092bab263667
   React-networking: 89f6b69755a3176f30e56ba1ba8e214b1518ecfb
