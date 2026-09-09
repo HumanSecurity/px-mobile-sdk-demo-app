@@ -1059,10 +1059,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@humansecurity/react-native-sdk@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@humansecurity/react-native-sdk/-/react-native-sdk-3.0.1.tgz#e392b1346286f44cbbaa9ef35cc89f4e80113b53"
-  integrity sha512-Qa2HlWysTvb/TUxRSHmy7LlrmXB2gXZ0rxBm0lBXtqDa+w9TBmYo488jVxaD44o3wf4a0j/UuPB2o4qJBR7EEw==
+"@humansecurity/react-native-sdk@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@humansecurity/react-native-sdk/-/react-native-sdk-3.0.2.tgz#99d5f329fc1c58d56c08b63a68454d3ea6eee80f"
+  integrity sha512-WkKJXp4jdsSbITGL/SFgnzvAwN4SvnED4oF4Y/ToRe6+O6ZbMVWc1UugHDWeJIX8ZqG3yhnQ/9qP1RTKUMHqkg==
 
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
