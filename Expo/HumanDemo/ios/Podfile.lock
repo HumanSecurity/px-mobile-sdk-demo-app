@@ -90,10 +90,10 @@ PODS:
   - hermes-engine (250829098.0.16):
     - hermes-engine/Pre-built (= 250829098.0.16)
   - hermes-engine/Pre-built (250829098.0.16)
-  - HUMAN (5.3.1)
-  - HumanSecurity (3.0.1):
+  - HUMAN (5.3.2)
+  - HumanSecurity (3.0.2):
     - ExpoModulesCore
-    - HUMAN (= 5.3.1)
+    - HUMAN (= 5.3.2)
   - RCTDeprecation (0.86.2)
   - RCTRequired (0.86.2)
   - RCTSwiftUI (0.86.2)
