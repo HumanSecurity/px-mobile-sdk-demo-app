@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../hybrid/hybrid_view.dart';
 import '../settings/settings_view.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -24,12 +25,22 @@ class LoginView extends StatelessWidget {
           ),
         ],
       ),
-      body: ElevatedButton(
+      body: Column(
+        children: [
+          ElevatedButton(
             onPressed: () {
               _sendUrlRequest();
             },
             child: Text('Login'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(HybridView.routeName);
+            },
+            child: const Text('Hybrid VID'),
+          ),
+        ],
+      ),
     );
   }
 
