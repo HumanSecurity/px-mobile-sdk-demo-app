@@ -227,8 +227,13 @@ public class HumanManager extends Plugin {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 current = webView.getWebViewClient();
             } else {
-                java.lang.reflect.Method method = WebView.class.getMethod("getWebViewClient");
-                current = (WebViewClient) method.invoke(webView);
+                java.lang.reflect.Field providerField = WebView.class.getDeclaredField("mProvider");
+                providerField.setAccessible(true);
+                Object provider = providerField.get(webView);
+                if (provider != null) {
+                    java.lang.reflect.Method method = provider.getClass().getMethod("getWebViewClient");
+                    current = (WebViewClient) method.invoke(provider);
+                }
             }
         } catch (Exception ignored) {
         }
