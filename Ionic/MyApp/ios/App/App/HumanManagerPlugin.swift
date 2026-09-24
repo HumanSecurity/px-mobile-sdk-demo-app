@@ -20,7 +20,7 @@ class HumanManagerPlugin: CAPPlugin {
             policy.automaticInterceptorPolicy.interceptorType = .none
             policy.doctorAppPolicy.enabled = true
             policy.hybridAppPolicy.supportExternalWebViews = true
-            policy.hybridAppPolicy.set(webRootDomains: ["example.com"], forAppId: "PXj9y4Q8Em")
+            policy.hybridAppPolicy.set(webRootDomains: ["pxchk.net"], forAppId: "PXj9y4Q8Em")
             try HumanSecurity.start(appId: "PXj9y4Q8Em", policy: policy)
         }
         catch {

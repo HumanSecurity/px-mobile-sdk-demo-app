@@ -23,7 +23,7 @@ class HumanManager {
                 policy.doctorAppPolicy.enabled = true
                 policy.challengePresentationType = HSChallengePresentationType.CENTER
                 policy.hybridAppPolicy.supportExternalWebViews = true
-                policy.hybridAppPolicy.setWebRootDomains(setOf("example.com"), "PXj9y4Q8Em")
+                policy.hybridAppPolicy.setWebRootDomains(setOf("pxchk.net"), "PXj9y4Q8Em")
                 HumanSecurity.start(application, "PXj9y4Q8Em", policy)
             }
             catch (exception: Exception) {

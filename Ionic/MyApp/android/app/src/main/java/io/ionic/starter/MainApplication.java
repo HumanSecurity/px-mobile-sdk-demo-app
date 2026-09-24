@@ -29,7 +29,7 @@ public class MainApplication extends Application {
         policy.getDoctorAppPolicy().setEnabled(true);
         policy.setChallengePresentationType(HSChallengePresentationType.CENTER);
         policy.getHybridAppPolicy().setSupportExternalWebViews(true);
-        policy.getHybridAppPolicy().setWebRootDomains(new HashSet<>(Arrays.asList("example.com")), "PXj9y4Q8Em");
+        policy.getHybridAppPolicy().setWebRootDomains(new HashSet<>(Arrays.asList("pxchk.net")), "PXj9y4Q8Em");
         try {
             HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", policy);
         }
