@@ -2,10 +2,33 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import * as React from 'react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
-import { registerPlugin } from '@capacitor/core';
+import { useState } from 'react';
+import { Human } from '../human';
 
+const PROTECTED_URL = 'https://sample-ios.pxchk.net/';
 
 const Tab1: React.FC = () => {
+  const [hybridStatus, setHybridStatus] = useState('Hybrid check not run');
+
+  const checkHybridVid = async () => {
+    await Human.setupWebView();
+    const native = await Human.vid({ appId: 'PXj9y4Q8Em' });
+    const web = await Human.readPxVid({ url: PROTECTED_URL });
+    const state = await Human.hybridSyncState({ appId: 'PXj9y4Q8Em' });
+    const nativeVid = native.value;
+    const webVid = web.value;
+    const match =
+      webVid.length > 0 && webVid === nativeVid
+        ? 'VID match'
+        : 'VID differs or _pxvid is not in the WebView cookie store yet';
+    const acceptable = state.kind === 'healthy' || state.kind === 'degraded';
+    setHybridStatus(
+      `Native VID: ${nativeVid}\nWebView _pxvid: ${webVid}\n${match}\nhybridSyncState: ${state.kind}${
+        state.channel ? ` (${state.channel})` : ''
+      }\n${acceptable ? 'state accepted' : 'state is not healthy or degraded'}`,
+    );
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -24,18 +47,15 @@ const Tab1: React.FC = () => {
           <button type="button" onClick={sendUrlRequest}>
             Click Me
           </button>
+          <button type="button" onClick={checkHybridVid}>
+            Check hybrid VID
+          </button>
+          <pre>{hybridStatus}</pre>
         </div>
       </IonContent>
     </IonPage>
   );
 };
-
-export interface HumanPlugin {
-  getHttpHeaders(): Promise<{ value: string }>;
-  handleResponse(options: { value: string }): Promise<{ value: string }>;
-}
-
-const Human = registerPlugin<HumanPlugin>('HUMAN');
 
 const sendUrlRequestAndSimulateBlock = async () => {
   const result = await Human.getHttpHeaders()
