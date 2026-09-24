@@ -126,11 +126,7 @@ public class HumanManager extends Plugin {
                 call.reject("WEBVIEW_NOT_FOUND", "Capacitor WebView is not ready");
                 return;
             }
-            WebViewClient client = null;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                client = webView.getWebViewClient();
-            }
-            HumanSecurity.INSTANCE.setupWebView(webView, client);
+            HumanSecurity.INSTANCE.setupWebView(webView, hostWebViewClient(webView));
             call.resolve();
         });
     }
@@ -223,6 +219,32 @@ public class HumanManager extends Plugin {
             ret.put("reason", state.getReason().getWireValue());
         }
         return ret;
+    }
+
+    private static WebViewClient hostWebViewClient(WebView webView) {
+        WebViewClient current = null;
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                current = webView.getWebViewClient();
+            } else {
+                java.lang.reflect.Method method = WebView.class.getMethod("getWebViewClient");
+                current = (WebViewClient) method.invoke(webView);
+            }
+        } catch (Exception ignored) {
+        }
+        if (current == null) {
+            return null;
+        }
+        if (!"PXWebViewClient".equals(current.getClass().getSimpleName())) {
+            return current;
+        }
+        try {
+            java.lang.reflect.Field field = current.getClass().getDeclaredField("originalWebViewClient");
+            field.setAccessible(true);
+            return (WebViewClient) field.get(current);
+        } catch (Exception ignored) {
+            return current;
+        }
     }
 
     private static String pxVid(String cookieHeader) {

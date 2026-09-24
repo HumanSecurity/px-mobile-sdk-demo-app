@@ -97,8 +97,10 @@ class HumanSecurity {
     return _parseState(raw ?? {});
   }
 
-  /// Explicit cookies registration. Flutter cannot attach a WebView instance.
-  /// Throws a [PlatformException] the app can catch when [start] has not run.
+  /// Confirms hybrid cookies mode was requested at start. `webview_flutter` does
+  /// not expose a `WKWebView` or Android `WebView`, so this does not call native
+  /// `HumanSecurity.setupWebView` and does not attach an instance. Throws a
+  /// [PlatformException] the app can catch when [start] has not run.
   /// `channelUnavailable` can be terminal because there is no non-cookie rung.
   static Future<void> setupWebView() async {
     if (!_started) {

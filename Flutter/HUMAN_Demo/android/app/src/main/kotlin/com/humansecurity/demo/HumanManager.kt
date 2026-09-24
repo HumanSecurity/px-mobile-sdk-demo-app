@@ -73,8 +73,14 @@ class HumanManager {
                         }
                         val domains = call.argument<List<String>>("webRootDomains")?.toSet() ?: emptySet()
                         val external = call.argument<Boolean>("supportExternalWebViews") ?: true
-                        start(application, appId, domains, external)
-                        result.success(null)
+                        mainHandler.post {
+                            try {
+                                start(application, appId, domains, external)
+                                result.success(null)
+                            } catch (exception: Exception) {
+                                result.error("HUMAN_ERROR", exception.message, null)
+                            }
+                        }
                     }
                     "vid" -> {
                         val appId = call.argument<String>("appId")
