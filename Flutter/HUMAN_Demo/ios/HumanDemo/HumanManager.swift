@@ -11,6 +11,8 @@ class HumanManager {
             let policy = HSPolicy()
             policy.automaticInterceptorPolicy.interceptorType = .none
             policy.doctorAppPolicy.enabled = true
+            policy.hybridAppPolicy.supportExternalWebViews = true
+            policy.hybridAppPolicy.set(webRootDomains: ["example.com"], forAppId: "PXj9y4Q8Em")
             try HumanSecurity.start(appId: "PXj9y4Q8Em", policy: policy)
         }
         catch {

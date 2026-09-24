@@ -11,7 +11,9 @@ import com.humansecurity.mobile_sdk.main.policy.HSAutomaticInterceptorType;
 import com.humansecurity.mobile_sdk.main.policy.HSPolicy;
 import com.humansecurity.mobile_sdk.main.policy.HSStorageMethod;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class MainApplication extends Application {
 
@@ -26,6 +28,8 @@ public class MainApplication extends Application {
         policy.getAutomaticInterceptorPolicy().setInterceptorType(HSAutomaticInterceptorType.NONE);
         policy.getDoctorAppPolicy().setEnabled(true);
         policy.setChallengePresentationType(HSChallengePresentationType.CENTER);
+        policy.getHybridAppPolicy().setSupportExternalWebViews(true);
+        policy.getHybridAppPolicy().setWebRootDomains(new HashSet<>(Arrays.asList("example.com")), "PXj9y4Q8Em");
         try {
             HumanSecurity.INSTANCE.start(this, "PXj9y4Q8Em", policy);
         }
