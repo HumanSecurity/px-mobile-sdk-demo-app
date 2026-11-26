@@ -22,7 +22,23 @@
 		6AF4697427343D6100133205 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF4697327343D6100133205 /* ProductsViewController.swift */; };
 		6AF469762734442D00133205 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF469752734442D00133205 /* Product.swift */; };
 		6AF4697827344C4300133205 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF4697727344C4300133205 /* ProductCell.swift */; };
+		B3106E4E3063EFA000A6F04D /* HUMAN.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32FED7A2C0CB85200DAC4A3 /* HUMAN.xcframework */; };
+		B3106E4F3063EFA000A6F04D /* HUMAN.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B32FED7A2C0CB85200DAC4A3 /* HUMAN.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3106E503063EFA000A6F04D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3106E4F3063EFA000A6F04D /* HUMAN.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		273914B1E7B396D5E3548B09 /* Pods-PerimeterX_SDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerimeterX_SDK_Demo.release.xcconfig"; path = "Target Support Files/Pods-PerimeterX_SDK_Demo/Pods-PerimeterX_SDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F751C3D86519FFEF22EB9D6 /* Pods_HUMAN_SDK_Demo.framework in Frameworks */,
+				B3106E4E3063EFA000A6F04D /* HUMAN.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +224,7 @@
 				6A70CAF9272E7B2100909C25 /* Frameworks */,
 				6A70CAFA272E7B2100909C25 /* Resources */,
 				3DB1087D5AFABF892B1E797F /* [CP] Embed Pods Frameworks */,
+				B3106E503063EFA000A6F04D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,7 +497,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,7 +528,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
